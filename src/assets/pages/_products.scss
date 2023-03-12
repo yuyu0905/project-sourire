@@ -1,0 +1,22 @@
+.products {
+    &-img {
+        height: 200px;
+        
+    }
+    &-card-hover {
+        &:hover {
+            .products-img {
+                opacity: 0.6;
+            }
+            .products-more {
+                display: block;
+            }
+        }
+    }
+    &-more {
+        display: none;
+        color: $white !important;
+        background-color: $dark !important;
+        border-color: $dark !important;
+    }
+}

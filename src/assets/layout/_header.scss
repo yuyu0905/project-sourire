@@ -1,0 +1,28 @@
+.menu {
+    height: calc(100vh - 72px);
+    @include media-breakpoint-up(lg) {
+        height: auto;
+    }
+    .active {
+        color: $dark !important;
+        border-bottom: solid;
+    }
+}
+
+.cart {
+    &-menu {
+        min-width: 520px;
+    }
+    &-img {
+        height: 65px;
+        width: 65px;
+    }
+    &-list {
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+    &-number {
+        width: auto;
+        max-width: 80px;
+    }
+}

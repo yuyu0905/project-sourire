@@ -1,0 +1,122 @@
+.banner {
+    &-img {
+        height: 300px;
+        @include media-breakpoint-up(lg) {
+            height: 650px;
+        }
+    }
+}
+
+// 介紹
+.info {
+    &-img-1 {
+        height: 196px;
+        @include media-breakpoint-up(lg) {
+            height: 275px;
+        }
+    }
+    &-img-2 {
+        height: 320px;
+        @include media-breakpoint-up(lg) {
+            height: 418px;
+        }
+    }
+}
+
+// 服務
+.service {
+    &-img {
+        height: 351px;
+        @include media-breakpoint-up(lg) {
+            height: 416px;
+        }
+    }
+}
+
+// 活動資訊
+.news {
+    background-color: #00000066;
+    &-bg-img {
+        height: 210px;
+        @include media-breakpoint-up(lg) {
+            height: 280px;
+        }
+    }
+    &-bg-1 {
+        background-image: url("@/assets/images/news_1.jpg");
+    }
+    &-bg-2 {
+        background-image: url("@/assets/images/news_2.jpg");
+    }
+    &-bg-3 {
+        background-image: url("@/assets/images/news_3.jpg");
+    }
+}
+
+// 精選花束
+.recommend {
+    &-img {
+        height: 320px;
+    }
+}
+
+// 輪播
+// .swiper {
+//     &-buttons {
+//         position: initial !important;
+//         transform: none !important;
+//     }
+
+//     &-button-next, &-button-prev {
+//         width: 48px !important;
+//         height: 48px !important;
+//     }
+
+//     &-button-next:after, &-button-prev:after {
+//         content: '' !important;
+//     }
+
+//     &-pagination {
+//         position: unset !important;
+
+//         &-bullet {
+//             background-color: $primary !important;
+//             &-active {
+//                 width: 25px !important;
+//                 border-radius: 100px !important;
+//             }
+//         }
+//     }
+// }
+
+.swiper {
+    &-buttons {
+        position: initial;
+        transform: none;
+    }
+
+    &-button-next:after, &-button-prev:after {
+        content: '';
+    }
+
+    &-pagination {
+        position: unset;
+
+        &-bullet {
+            background-color: $primary;
+            &-active {
+                width: 25px;
+                border-radius: 100px;
+            }
+        }
+    }
+}
+
+.contact {
+    &-map {
+        height: 206px;
+        @include media-breakpoint-up(lg) {
+            height: 382px;
+        }
+    }
+}

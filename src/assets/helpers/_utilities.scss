@@ -1,0 +1,84 @@
+.fw-medium {
+    font-weight: 500;
+}
+
+.text-vertical-lr {
+    writing-mode: vertical-lr;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    &:hover {
+        color: $dark;
+    }
+}
+
+.icon-lg {
+    width: 48px;
+    height: 48px;
+    &:hover {
+        color: $dark;
+    }
+}
+
+.pill-number {
+    transform: translate(-30%, -50%) !important;
+}
+
+.btn-primary, .btn-outline-primary, .btn-basic {
+    &:hover {
+        color: $white !important;
+        background-color: $dark !important;
+        border-color: $dark !important;
+    }
+}
+
+.btn-basic {
+    color: $gray-800 !important;
+}
+
+.link-width {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+        width: auto;
+    }
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.hover-primary {
+    &:hover {
+        color: $dark !important;
+    }
+}
+
+.hover-transform-scale {
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.hover-transition {
+    &:hover {
+        transition: .5s;
+    }
+}
+
+.bg-img {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.list-group-item-action {
+    &.active {
+        color: $white !important;
+    }
+}
+
+.min-height {
+    min-height: calc(100vh - 285px);
+}

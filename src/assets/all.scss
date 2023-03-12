@@ -1,0 +1,17 @@
+@import "bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "bootstrap/scss/bootstrap";
+
+// Import Swiper styles
+@import 'swiper/css';
+@import 'swiper/css/free-mode';
+@import 'swiper/css/pagination';
+@import 'swiper/css/navigation';
+@import 'swiper/css/thumbs';
+
+@import './helpers/base';
+@import './helpers/utilities';
+@import './layout/header';
+@import './pages/index';
+@import './pages/products';
+@import './pages/product';

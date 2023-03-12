@@ -1,0 +1,18 @@
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@400;500;700&display=swap');
+
+// 全站樣式
+body {
+    font-family: "Poppins", "Noto Sans TC", "sans-serif";
+    // font-family: 'Poppins', 'sans-serif';
+    background-color: $background;
+    color: $gray-800;
+}
+
+img {
+    object-fit: cover; // 防止圖片變形
+}
+
+a {
+    text-decoration: none;
+}
