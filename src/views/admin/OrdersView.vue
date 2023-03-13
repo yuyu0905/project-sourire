@@ -1,5 +1,7 @@
 <template>
-  <VueLoading :active="isLoading"></VueLoading>
+  <VueLoading :active="isLoading">
+      <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
+  </VueLoading>
   <div class="container">
       <div class="mt-4">
           <table class="table table-hover align-middle">

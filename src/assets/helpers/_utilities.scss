@@ -82,3 +82,11 @@
 .min-height {
     min-height: calc(100vh - 285px);
 }
+
+.loading-img {
+    opacity: 0.8;
+}
+
+.animate__animated.animate__shakeY {
+    --animate-duration: 2s;
+}

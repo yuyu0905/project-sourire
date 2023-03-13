@@ -1,4 +1,7 @@
 <template>
+    <VueLoading :active="isLoading">
+        <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
+    </VueLoading>
     <div class="recommend-swiper mb-4 mb-lg-5">
         <swiper
             :breakpoints="{

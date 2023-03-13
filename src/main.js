@@ -18,6 +18,7 @@ import App from './App.vue'
 import router from './router'
 
 import { date } from './methods/dateFormat'
+import 'animate.css'
 
 // VeeValid
 defineRule('required', required)

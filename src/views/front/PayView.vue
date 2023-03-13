@@ -1,5 +1,7 @@
 <template>
-    <VueLoading :active="isLoading"></VueLoading>
+    <VueLoading :active="isLoading">
+        <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
+    </VueLoading>
     <main>
       <section class="bg-background py-5 min-height">
         <div class="container">

@@ -1,5 +1,7 @@
 <template>
-  <VueLoading :active="isLoading"></VueLoading>
+    <VueLoading :active="isLoading">
+        <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
+    </VueLoading>
     <div id="orderModal" ref="orderModal" class="modal fade" tabindex="-1" aria-labelledby="orderModalLabel"
           aria-hidden="true">
         <div class="modal-dialog modal-xl">

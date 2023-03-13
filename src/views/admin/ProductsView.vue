@@ -1,5 +1,7 @@
 <template>
-  <VueLoading :active="isLoading"></VueLoading>
+  <VueLoading :active="isLoading">
+      <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
+  </VueLoading>
   <div class="container">
         <div class="text-end mt-4">
           <button class="btn btn-gray-dark" @click="openModal('create')">
