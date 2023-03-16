@@ -34,7 +34,7 @@
                     <span class="badge rounded-pill bg-dark position-absolute top-0 start-75 pill-number fw-medium">1</span>
                 </a> -->
                 <a class="btn hover-transform-scale bg-white rounded-pill px-2 py-3 d-flex flex-column align-items-center"
-                    role="button" v-if="scrollTop > 500" @click="scrollToTop">
+                    role="button" v-if="isShow" @click="scrollToTop">
                     <img class="img-fluid mb-0 mb-lg-3 " src="@/assets/images/top.svg" alt="top" width="12" height="42">
                     <span class="text-vertical-lr d-none d-lg-inline">回 到 上 面</span>
                 </a>
@@ -46,22 +46,23 @@
 export default {
   data () {
     return {
-      scrollTop: 0
+      isShow: false
     }
   },
   methods: {
     scrollToTop () {
-      this.scrollTop = 0
       window.scrollTo(0, 0)
     },
     handleScroll () {
-      this.scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const rootElement = document.documentElement
+      const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
+      this.isShow = rootElement.scrollTop / scrollTotal > 0.1
     }
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  beforeUnmount () {
+  unmounted () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
