@@ -1,7 +1,4 @@
 <template>
-    <VueLoading :active="isLoading">
-        <img class="img-fluid loading-img animate__animated animate__shakeY" src="@/assets/images/logo-lg.svg" alt="logo">
-    </VueLoading>
     <div class="recommend-swiper mb-4 mb-lg-5">
         <swiper
             :breakpoints="{
@@ -71,7 +68,7 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2'
+import { Toast } from '@/methods/toast.js'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Autoplay, Pagination, Navigation } from 'swiper'
 const { VITE_API, VITE_APIPATH } = import.meta.env
@@ -81,9 +78,7 @@ export default {
     return {
       modules: [Autoplay, Pagination, Navigation],
       products: [],
-      product: {},
-      loadingItem: '', // 存 ID
-      isLoading: false
+      product: {}
     }
   },
   components: {
@@ -97,19 +92,8 @@ export default {
       this.$http.get(`${VITE_API}/api/${VITE_APIPATH}/products`)
         .then(res => {
           this.products = res.data.products
-          this.isLoading = false
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-          this.isLoading = false
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     }
   },
   mounted () {

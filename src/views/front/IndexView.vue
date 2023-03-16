@@ -25,7 +25,7 @@
               </RouterLink>
                -->
               <RouterLink class="btn btn-primary py-3 text-white col-5 small" to="/products">
-                購買去
+                購買去<i class="fa-solid fa-arrow-right icon"></i>
               </RouterLink>
             </form>
           </div>
