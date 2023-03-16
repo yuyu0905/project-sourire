@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios'
-import Swal from 'sweetalert2'
+import { Toast } from '@/methods/toast.js'
 
 const { VITE_API, VITE_APIPATH } = import.meta.env
 const cartStore = defineStore('cart', {
@@ -19,16 +19,7 @@ const cartStore = defineStore('cart', {
           this.cart = res.data.data
           this.cartNum = res.data.data.carts.reduce((acc, cart) => acc + cart.qty, 0)
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     },
 
     // 加入購物車
@@ -39,26 +30,10 @@ const cartStore = defineStore('cart', {
       })
         .then(res => {
           this.getCart()
-          Swal.fire({
-            icon: 'success',
-            text: res.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(res.data.message, 'success')
           this.loadingItem = ''
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     },
 
     // 刪除購物車項目（單一）
@@ -67,29 +42,13 @@ const cartStore = defineStore('cart', {
       axios.delete(`${VITE_API}/api/${VITE_APIPATH}/cart/${id}`)
         .then(res => {
           this.getCart()
-          Swal.fire({
-            icon: 'success',
-            text: res.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(res.data.message, 'success')
           const cartMenu = document.querySelector('.cart-menu')
           if (cartMenu) {
             cartMenu.classList.remove('show')
           }
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     },
 
     // 刪除購物車項目（全部）
@@ -97,26 +56,10 @@ const cartStore = defineStore('cart', {
       axios.delete(`${VITE_API}/api/${VITE_APIPATH}/carts`)
         .then(res => {
           this.getCart()
-          Swal.fire({
-            icon: 'success',
-            text: res.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(res.data.message, 'success')
           this.loadingItem = ''
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     },
 
     // 調整購物車產品數量
@@ -130,26 +73,10 @@ const cartStore = defineStore('cart', {
       })
         .then(res => {
           this.getCart()
-          Swal.fire({
-            icon: 'success',
-            text: res.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(res.data.message, 'success')
           this.loadingItem = ''
         })
-        .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
-        })
+        .catch(err => Toast(err.response.data.message, 'error'))
     }
   }
 })

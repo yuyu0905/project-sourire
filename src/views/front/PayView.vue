@@ -85,7 +85,7 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2'
+import { Toast } from '@/methods/toast.js'
 const { VITE_API, VITE_APIPATH } = import.meta.env
 export default {
   data () {
@@ -105,14 +105,7 @@ export default {
           this.isLoading = false
         })
         .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(err.response.data.message, 'error')
           this.isLoading = false
         })
     },
@@ -122,26 +115,12 @@ export default {
       const { orderId } = this.$route.params
       this.$http.post(`${VITE_API}/api/${VITE_APIPATH}/pay/${orderId}`)
         .then(res => {
-          Swal.fire({
-            icon: 'success',
-            text: res.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(res.data.message, 'success')
           this.getOrder()
           this.isLoading = false
         })
         .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(err.response.data.message, 'error')
           this.isLoading = false
         })
     }

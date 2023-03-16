@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import Swal from 'sweetalert2'
+import { Toast } from '@/methods/toast.js'
 import { mapActions, mapState } from 'pinia'
 import cartStore from '@/stores/cart'
 import PaginationComponent from '@/components/PaginationComponent.vue'
@@ -117,14 +117,7 @@ export default {
           this.isLoading = false
         })
         .catch(err => {
-          Swal.fire({
-            icon: 'error',
-            text: err.response.data.message,
-            toast: true,
-            position: 'top-right',
-            showConfirmButton: false,
-            timer: 1500
-          })
+          Toast(err.response.data.message, 'error')
           this.isLoading = false
         })
     },
