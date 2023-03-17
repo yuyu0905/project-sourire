@@ -22,12 +22,6 @@
               <CartList></CartList>
               <template v-if="cart.carts && cart.carts.length > 0">
                 <hr />
-                <p class="fs-5 text-end fw-bold" :class="cart.final_total !== cart.total ? 'text-muted text-decoration-line-through' : ''">
-                  {{`總計金額：NT$ ${cart.total}`}}
-                </p>
-                <p class="fs-5 text-end fw-bold mb-4" v-if="cart.final_total !== cart.total">
-                  {{`折扣後金額：NT$ ${cart.final_total}`}}
-                </p>
                 <div class="input-group mb-3 input-group-sm">
                   <input type="text" class="form-control" placeholder="已套用優惠券" disabled v-if="cart.final_total !== cart.total">
                   <input type="text" class="form-control" v-model="couponCode" placeholder="請輸入優惠券" v-else />
@@ -39,6 +33,12 @@
                     </button>
                   </div>
                 </div>
+                <p class="fs-5 text-end fw-bold" :class="cart.final_total !== cart.total ? 'text-muted text-decoration-line-through' : ''">
+                  {{`總計金額：NT$ ${cart.total}`}}
+                </p>
+                <p class="fs-5 text-end fw-bold mb-4" v-if="cart.final_total !== cart.total">
+                  {{`折扣後金額：NT$ ${cart.final_total}`}}
+                </p>
               </template>
               <div class="d-flex flex-column justify-content-center align-items-start mt-4" v-else>
                 <p><i class="fa-solid fa-cart-shopping mb-2 me-2 fs-5"></i>購物車內沒有商品</p>
