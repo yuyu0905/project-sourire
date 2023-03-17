@@ -24,19 +24,21 @@
                       </ol>
                   </nav>
                   <h2 class="fw-bold">{{ product.set + product.title }}</h2>
-                  <h3 class="mb-5">{{ product.subTitle }}</h3>
+                  <h3 class="mb-3">{{ product.subTitle }}</h3>
+                  <p>{{ product.content }}</p>
                   <p class="mb-5" v-html="product.description"></p>
                   <p class="fs-3 mb-3" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
                     <p v-else class="fs-3 mb-3">
                         <del class="text-gray-dark fw-normal fs-4 me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
                     </p>
-                  <div class="input-group">
+                  <div class="input-group gap-3 gap-lg-0">
                     <select class="form-select" v-model.number="qty">
                       <option v-for="i in 20" :value="i" :key="`${i}_qty`">{{i}}</option>
                     </select>
                     <button type="button" class="btn btn-primary py-3 px-5 text-white link-width"
                         @click.prevent="addCart(product.id, qty)"
-                        :disabled="product.id === loadingItem">
+                        :disabled="product.id === loadingItem"
+                        style="z-index: 1;">
                         加入購物車
                     </button>
                   </div>
