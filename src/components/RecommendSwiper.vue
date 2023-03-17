@@ -1,5 +1,5 @@
 <template>
-    <div class="recommend-swiper mb-4 mb-lg-5">
+    <div class="recommend-swiper mb-4 mb-lg-5" data-aos="fade-up">
         <swiper
             :breakpoints="{
                 '768': {
@@ -18,11 +18,6 @@
             :navigation="{
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev'
-            }"
-            :autoplay="{
-                delay: 2500,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
             }"
             :modules="modules">
             <!-- If we need navigation buttons -->

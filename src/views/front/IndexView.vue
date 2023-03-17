@@ -5,12 +5,14 @@
       <div class="container-lg">
         <div class="row mb-4 d-lg-flex flex-lg-row-reverse">
           <div class="col-12 col-lg-8 row g-0 g-lg-1">
-            <img class="img-fluid banner-img col-6" src="@/assets/images/banner_1.jpg" alt="banner_1">
-            <img class="img-fluid banner-img col-6" src="@/assets/images/banner_2.jpg" alt="banner_2">
+            <img class="img-fluid banner-img col-6" src="@/assets/images/banner_1.jpg" alt="banner_1"
+              data-aos="fade-right" data-aos-delay="150">
+            <img class="img-fluid banner-img col-6" src="@/assets/images/banner_2.jpg" alt="banner_2"
+              data-aos="fade-left" data-aos-delay="150">
           </div>
 
           <div class="col-12 col-lg-4 d-lg-flex flex-lg-column justify-content-lg-center">
-            <h1 class="fw-bold my-4">一束花的浪漫<br />
+            <h1 class="fw-bold my-4" data-aos="fade-up" data-aos-delay="50">一束花的浪漫<br />
               帶來微笑<br />
               展開美好的一天</h1>
             <form class="row g-0 my-3">
@@ -25,7 +27,7 @@
               </RouterLink>
                -->
               <RouterLink class="btn btn-primary py-3 text-white col-5 small" to="/products">
-                購買去<i class="fa-solid fa-arrow-right icon"></i>
+                購買去<i class="fa-solid fa-arrow-right text-white icon"></i>
               </RouterLink>
             </form>
           </div>
@@ -38,18 +40,19 @@
       <div class="container">
         <div class="row gap-3 gap-lg-0">
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-between">
-            <div class="card bg-light">
+            <div class="card bg-light" data-aos="fade-up-right">
               <div class="card-body p-4 m-2">
                 <h3 class="card-title fw-bold mb-3">讓乾燥花走進生活</h3>
                 <p class="card-text">乾燥花顧名思義是「乾燥」的植物，不需脫水脫色，是鮮花自然風乾後的「真花」。</p>
                 <p class="card-text">質地比較硬且脆弱，一般來說乾燥花可以保存一年～兩年以上。</p>
               </div>
             </div>
-            <img class="img-fluid info-img-1" src="@/assets/images/info_1.jpg" alt="info_1">
+            <img class="img-fluid info-img-1" src="@/assets/images/info_1.jpg" alt="info_1" data-aos="fade-up-right">
           </div>
           <div class="col-12 col-lg-6 d-flex flex-column gap-3 gap-lg-4">
-            <img class="img-fluid info-img-2" src="@/assets/images/info_2.jpg" alt="info_2">
-            <div class="card bg-gray-dark">
+            <img class="img-fluid info-img-2" src="@/assets/images/info_2.jpg" alt="info_2"
+              data-aos="fade-up-left" data-aos-delay="300">
+            <div class="card bg-gray-dark" data-aos="fade-up-left">
               <div class="card-body p-3">
                 <p class="card-text text-white">Sourire 在法語是微笑的意思<br />
                   希望能藉由我們的花束，讓您綻放微笑。</p>
@@ -66,7 +69,7 @@
         <h2 class="fw-bold text-center mb-4 mb-lg-5">Sourire 能帶給你的</h2>
         <div class="row gy-4">
           <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-delay="300">
               <img class="img-fluid card-img-top service-img" src="@/assets/images/service_1.jpg" alt="service_1">
               <div class="card-body bg-background px-0">
                 <h3 class="card-title fw-bold">經典花禮</h3>
@@ -75,7 +78,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-delay="600">
               <img class="img-fluid card-img-top service-img" src="@/assets/images/service_2.jpg" alt="service_2">
               <div class="card-body bg-background px-0">
                 <h3 class="card-title fw-bold">手作課程</h3>
@@ -84,7 +87,7 @@
             </div>
           </div>
           <div class="col-12 col-lg-4">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-delay="900">
               <img class="img-fluid card-img-top service-img" src="@/assets/images/service_3.jpg" alt="service_3">
               <div class="card-body bg-background px-0">
                 <h3 class="card-title fw-bold">客製花禮</h3>

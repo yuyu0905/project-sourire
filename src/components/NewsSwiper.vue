@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div data-aos="fade-up">
         <swiper
             :slides-per-view="1"
             :space-between="12"

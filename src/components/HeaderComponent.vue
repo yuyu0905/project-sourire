@@ -2,12 +2,12 @@
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg bg-background">
       <div class="container">
-        <RouterLink class="navbar-brand" to="/">
+        <RouterLink class="navbar-brand" to="/" @click="() => closeMenu ()">
           <img class="img-fluid d-inline d-lg-none" src="@/assets/images/logo.svg" alt="logo">
           <img class="img-fluid d-none d-lg-inline" src="@/assets/images/logo-lg.svg" alt="logo">
         </RouterLink>
         <div class="d-flex justify-content-center align-items-center">
-          <RouterLink class="text-gray-dark me-4 d-lg-none" href="#" to="/carts">
+          <RouterLink class="text-gray-dark me-4 d-lg-none" to="/carts" @click="() => closeMenu ()">
             <i class="fa-solid fa-cart-shopping icon position-relative">
               <span class="badge rounded-pill bg-dark position-absolute top-0 start-100 pill-number fw-medium">
                 {{ cartNum > 0 ? (cartNum < 100 ? cartNum : '99+') : '' }}
@@ -28,7 +28,7 @@
               <li class="nav-item">
                 <RouterLink class="d-block py-3 text-gray-dark p-3 p-lg-2 hover-primary" to="/products" @click="() => closeMenu ()">購買花禮</RouterLink>
               </li>
-               <!-- TODO -->
+              <!-- TODO -->
               <!-- <li class="nav-item">
                 <RouterLink class="d-block py-3 text-gray-dark p-3 p-lg-2 hover-primary" to="/courses" @click="() => closeMenu ()">花藝課程</RouterLink>
               </li> -->
