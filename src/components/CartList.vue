@@ -19,7 +19,7 @@
         <td>
             <select class="form-select" v-model.number="cartItem.qty" @change="updateCart(cartItem)"
               :disabled="cartItem.id === loadingItem">
-              <option v-for="i in 20" :value="i" :key="`${i}_qty`">{{i}}</option>
+              <option v-for="i in (cartItem.qty <= 20 ? 20 : cartItem.qty)" :value="i" :key="`${i}_qty`">{{i}}</option>
             </select>
         </td>
         <td>
