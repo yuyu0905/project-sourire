@@ -4,7 +4,7 @@
   </VueLoading>
   <div class="container">
         <div class="text-end mt-4">
-          <button class="btn btn-gray-dark" @click="openModal('create')">
+          <button type="button" class="btn btn-gray-dark" @click="openModal('create')">
             建立新的產品
           </button>
         </div>
@@ -53,12 +53,12 @@
           </tbody>
         </table>
         <!-- 分頁元件 -->
-        <PaginationComponent :pagination="pagination" @change-page="getProducts"></PaginationComponent>
+        <PaginationComponent :pagination="pagination" @change-page="getProducts" />
       </div>
       <!-- Modal -->
       <ProductModal ref="productModal" :temp-product="tempProduct" :operate-type="operateType"
-        @save-product="saveProduct"></ProductModal>
-      <DelModal ref="delModal" :temp-item="tempProduct" @delete-item="deleteProduct"></DelModal>
+        @save-product="saveProduct" />
+      <DelModal ref="delModal" :temp-item="tempProduct" @delete-item="deleteProduct" />
       <!-- Modal -->
 </template>
 
@@ -102,7 +102,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 新增 & 修改 產品
     saveProduct (product) {
       this.isLoading = true
@@ -133,7 +132,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 刪除商品
     deleteProduct () {
       this.isLoading = true
@@ -159,7 +157,6 @@ export default {
           this.isLoading = false
         })
     },
-
     openModal (operateType, product) {
       this.operateType = operateType
       if (operateType === 'create') {

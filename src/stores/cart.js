@@ -21,7 +21,6 @@ const cartStore = defineStore('cart', {
         })
         .catch(err => Toast(err.response.data.message, 'error'))
     },
-
     // 加入購物車
     addCart (productId, qty = 1) {
       this.loadingItem = productId
@@ -35,7 +34,6 @@ const cartStore = defineStore('cart', {
         })
         .catch(err => Toast(err.response.data.message, 'error'))
     },
-
     // 刪除購物車項目（單一）
     delCart (id) {
       this.loadingItem = id
@@ -50,7 +48,6 @@ const cartStore = defineStore('cart', {
         })
         .catch(err => Toast(err.response.data.message, 'error'))
     },
-
     // 刪除購物車項目（全部）
     delCars () {
       axios.delete(`${VITE_API}/api/${VITE_APIPATH}/carts`)
@@ -61,7 +58,6 @@ const cartStore = defineStore('cart', {
         })
         .catch(err => Toast(err.response.data.message, 'error'))
     },
-
     // 調整購物車產品數量
     updateCart (data) {
       this.loadingItem = data.id

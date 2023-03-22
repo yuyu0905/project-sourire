@@ -12,9 +12,9 @@
           <a class="text-gray-dark hover-primary text-decoration-underline d-block text-end small"
             role="button" @click="delCars()">清空購物車
           </a>
-          <h6 class="text-center text-muted"> — 已加入商品 — </h6>
+          <h6 class="text-center text-muted" v-if="cart.carts && cart.carts.length > 0"> — 已加入商品 — </h6>
           <div class="cart-list">
-            <CartList></CartList>
+            <CartList />
           </div>
           <template v-if="cart.carts && cart.carts.length > 0">
             <p class="fs-6 text-end fw-bold">{{`總計金額：NT$ ${cart.final_total}`}}</p>

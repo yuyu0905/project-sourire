@@ -52,11 +52,11 @@
               </tbody>
           </table>
           <!-- 分頁元件 -->
-          <PaginationComponent :pagination="pagination" @change-page="getOrders"></PaginationComponent>
+          <PaginationComponent :pagination="pagination" @change-page="getOrders" />
       </div>
       <!-- Modal -->
-      <OrderModal ref="orderModal" :temp-order="tempOrder" @update-paid="updatePaid"></OrderModal>
-      <DelModal ref="delModal" :temp-item="tempOrder" @delete-item="deleteOrder"></DelModal>
+      <OrderModal ref="orderModal" :temp-order="tempOrder" @update-paid="updatePaid" />
+      <DelModal ref="delModal" :temp-item="tempOrder" @delete-item="deleteOrder" />
       <!-- Modal -->
   </div>
 </template>
@@ -99,7 +99,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 更新付款狀態
     updatePaid (order) {
       this.isLoading = true
@@ -125,7 +124,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 刪除訂單
     deleteOrder () {
       this.isLoading = true
@@ -151,7 +149,6 @@ export default {
           this.isLoading = false
         })
     },
-
     openModal (operateType, order) {
       this.operateType = operateType
       if (operateType === 'view') {

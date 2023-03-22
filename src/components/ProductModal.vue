@@ -31,15 +31,14 @@
                     <input type="text" class="form-control"
                             placeholder="請輸入圖片連結" id="imagesUrl" v-model="innerProduct.imagesUrl[index]">
                     <img class="img-fluid" :src="innerProduct.imagesUrl[index]">
-
                   </div>
                   <div v-if="!innerProduct.imagesUrl || !innerProduct.imagesUrl.length || innerProduct.imagesUrl[innerProduct.imagesUrl.length-1]">
-                    <button class="btn btn-outline-primary btn-sm d-block w-100" @click="createImagesUrl">
+                    <button type="button" class="btn btn-outline-primary btn-sm d-block w-100" @click="createImagesUrl">
                         新增圖片
                     </button>
                   </div>
                   <div v-else>
-                    <button class="btn btn-outline-danger btn-sm d-block w-100" @click="deleteImagesUrl">
+                    <button type="button" class="btn btn-outline-danger btn-sm d-block w-100" @click="deleteImagesUrl">
                         刪除圖片
                     </button>
                   </div>
@@ -57,7 +56,6 @@
                     <label for="subTitle" class="form-label">副標題</label>
                     <input id="subTitle" type="text" class="form-control" placeholder="請輸入標題" v-model="innerProduct.subTitle">
                   </div>
-
                   <div class="row">
                     <div class="mb-3 col-md-6">
                       <label for="category" class="form-label">分類</label>
@@ -69,7 +67,6 @@
                       <input id="unit" type="text" class="form-control" placeholder="請輸入單位" v-model="innerProduct.unit">
                     </div>
                   </div>
-
                   <div class="row">
                     <div class="mb-3 col-md-6">
                       <label for="origin_price" class="form-label">原價</label>
@@ -83,7 +80,6 @@
                     </div>
                   </div>
                   <hr>
-
                   <div class="mb-3">
                     <label for="description" class="form-label">產品描述</label>
                     <textarea id="description" type="text" class="form-control"
@@ -146,20 +142,16 @@ export default {
       }
       this.innerProduct.imagesUrl.push('')
     },
-
     // 刪除圖片
     deleteImagesUrl () {
       this.innerProduct.imagesUrl.pop()
     },
-
     showModal () {
       this.productModal.show()
     },
-
     hideModal () {
       this.productModal.hide()
     },
-
     // 上傳圖片
     uploadFile () {
       const formData = new FormData()

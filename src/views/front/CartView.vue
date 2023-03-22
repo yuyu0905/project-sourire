@@ -19,7 +19,7 @@
           <div class="row">
             <div class="col-12 col-lg-6">
               <h2>確認訂單內容</h2>
-              <CartList></CartList>
+              <CartList />
               <template v-if="cart.carts && cart.carts.length > 0">
                 <hr />
                 <div class="input-group mb-3 input-group-sm">

@@ -54,7 +54,7 @@
                 註冊
               </button> -->
               <!-- 購物車 電腦版 -->
-              <CartDropdown ref="cartDropdown"></CartDropdown>
+              <CartDropdown ref="cartDropdown" />
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
     </nav>
   </header>
   <!-- Modal -->
-    <LoginModal ref="loginModal" :action="action" @change-action="changeAction"></LoginModal>
+    <LoginModal ref="loginModal" :action="action" @change-action="changeAction" />
   <!-- Modal -->
 </template>
 

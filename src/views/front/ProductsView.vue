@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <!-- 分頁元件 -->
-                    <PaginationComponent :pagination="pagination" @change-page="getProducts"></PaginationComponent>
+                    <PaginationComponent :pagination="pagination" @change-page="getProducts" />
                 </div>
             </div>
         </div>
@@ -121,13 +121,11 @@ export default {
           this.isLoading = false
         })
     },
-
     // 切換類別
     filterProducts (category) {
       this.category = category
       this.getProducts()
     },
-
     // 加入購物車
     ...mapActions(cartStore, ['addCart'])
   },

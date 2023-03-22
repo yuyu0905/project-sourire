@@ -4,7 +4,7 @@
     </VueLoading>
     <div class="container">
           <div class="text-end mt-4">
-            <button class="btn btn-gray-dark" @click="openModal('create')">
+            <button type="button" class="btn btn-gray-dark" @click="openModal('create')">
               建立新的優惠券
             </button>
           </div>
@@ -49,12 +49,12 @@
             </tbody>
           </table>
           <!-- 分頁元件 -->
-          <PaginationComponent :pagination="pagination" @change-page="getCoupons"></PaginationComponent>
+          <PaginationComponent :pagination="pagination" @change-page="getCoupons" />
         </div>
         <!-- Modal -->
         <CouponModal ref="couponModal" :temp-coupon="tempCoupon" :operate-type="operateType"
-          @save-coupon="saveCoupon"></CouponModal>
-        <DelModal ref="delModal" :temp-item="tempCoupon" @delete-item="deleteCoupon"></DelModal>
+          @save-coupon="saveCoupon" />
+        <DelModal ref="delModal" :temp-item="tempCoupon" @delete-item="deleteCoupon" />
         <!-- Modal -->
   </template>
 
@@ -96,7 +96,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 新增 & 修改 優惠券
     saveCoupon (coupon) {
       this.isLoading = true
@@ -127,7 +126,6 @@ export default {
           this.isLoading = false
         })
     },
-
     // 刪除商品
     deleteCoupon () {
       this.isLoading = true
@@ -153,7 +151,6 @@ export default {
           this.isLoading = false
         })
     },
-
     openModal (operateType, coupon) {
       this.operateType = operateType
       if (operateType === 'create') {

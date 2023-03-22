@@ -10,7 +10,6 @@
             <img class="img-fluid banner-img col-6" src="@/assets/images/banner_2.jpg" alt="banner_2"
               data-aos="fade-left" data-aos-delay="150">
           </div>
-
           <div class="col-12 col-lg-4 d-lg-flex flex-lg-column justify-content-lg-center">
             <h1 class="fw-bold my-4" data-aos="fade-up" data-aos-delay="50">一束花的浪漫<br />
               帶來微笑<br />
@@ -34,7 +33,6 @@
         </div>
       </div>
     </section>
-
     <!-- 介紹 -->
     <section class="bg-white py-5">
       <div class="container">
@@ -62,7 +60,6 @@
         </div>
       </div>
     </section>
-
     <!-- 服務 -->
     <section class="bg-background py-5">
       <div class="container">
@@ -98,23 +95,20 @@
         </div>
       </div>
     </section>
-
     <!-- 活動資訊 -->
     <section class="bg-background py-5">
       <div class="container">
         <h2 class="fw-bold text-center mb-4 mb-lg-5">活動資訊</h2>
-        <NewsSwiper></NewsSwiper>
+        <NewsSwiper />
       </div>
     </section>
-
     <!-- 精選花束 -->
     <section class="bg-background py-5">
       <div class="container">
         <h2 class="fw-bold text-center mb-4 mb-lg-5">精選花束</h2>
-        <RecommendSwiper></RecommendSwiper>
+        <RecommendSwiper />
       </div>
     </section>
-
     <!-- 聯絡我們 -->
     <section class="bg-white py-5">
       <div class="container">

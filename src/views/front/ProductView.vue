@@ -6,7 +6,7 @@
     <section class="bg-background py-5">
         <div class="container product">
             <div class="row">
-                <ProductThumbsSwiper :imagesUrl="allImagesUrl"></ProductThumbsSwiper>
+                <ProductThumbsSwiper :imagesUrl="allImagesUrl" />
                 <div class="col-12 col-md-6 col-lg-7" v-if="product.id">
                   <nav aria-label="breadcrumb">
                       <ol class="breadcrumb">
@@ -69,7 +69,7 @@
     <section class="bg-background py-5">
         <div class="container">
           <h2 class="fw-bold text-center mb-4 mb-lg-5">精選花束</h2>
-          <RecommendSwiper></RecommendSwiper>
+          <RecommendSwiper />
         </div>
     </section>
   </main>
