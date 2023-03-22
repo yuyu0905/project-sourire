@@ -40,19 +40,19 @@
       <div class="container">
         <div class="row gap-3 gap-lg-0">
           <div class="col-12 col-lg-6 d-flex flex-column justify-content-between">
-            <div class="card bg-light" data-aos="fade-up-right">
+            <div class="card bg-light" data-aos="fade-up">
               <div class="card-body p-4 m-2">
                 <h3 class="card-title fw-bold mb-3">讓乾燥花走進生活</h3>
                 <p class="card-text">乾燥花顧名思義是「乾燥」的植物，不需脫水脫色，是鮮花自然風乾後的「真花」。</p>
                 <p class="card-text">質地比較硬且脆弱，一般來說乾燥花可以保存一年～兩年以上。</p>
               </div>
             </div>
-            <img class="img-fluid info-img-1" src="@/assets/images/info_1.jpg" alt="info_1" data-aos="fade-up-right">
+            <img class="img-fluid info-img-1" src="@/assets/images/info_1.jpg" alt="info_1" data-aos="fade-up">
           </div>
           <div class="col-12 col-lg-6 d-flex flex-column gap-3 gap-lg-4">
             <img class="img-fluid info-img-2" src="@/assets/images/info_2.jpg" alt="info_2"
-              data-aos="fade-up-left" data-aos-delay="300">
-            <div class="card bg-gray-dark" data-aos="fade-up-left">
+              data-aos="fade-up" data-aos-delay="300">
+            <div class="card bg-gray-dark" data-aos="fade-up">
               <div class="card-body p-3">
                 <p class="card-text text-white">Sourire 在法語是微笑的意思<br />
                   希望能藉由我們的花束，讓您綻放微笑。</p>
