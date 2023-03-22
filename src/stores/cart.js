@@ -41,10 +41,6 @@ const cartStore = defineStore('cart', {
         .then(res => {
           this.getCart()
           Toast(res.data.message, 'success')
-          const cartMenu = document.querySelector('.cart-menu')
-          if (cartMenu) {
-            cartMenu.classList.remove('show')
-          }
         })
         .catch(err => Toast(err.response.data.message, 'error'))
     },
