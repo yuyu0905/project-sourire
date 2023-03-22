@@ -50,11 +50,12 @@
                 <div class="col-12 col-md-9">
                     <div class="row gy-4 mb-4">
                         <div class="col-12 col-md-6 col-lg-4" v-for="product in products" :key="product.id">
-                            <RouterLink :to="`/product/${product.id}`">
-                                <div class="card products-card-hover">
-                                    <div class="img-fluid card-img-top bg-img products-img position-relative" :style="`background-image: url(${product.imageUrl});`">
-                                        <p class="fs-6 py-2 px-7 mb-0 bg-white position-absolute w-100 text-center bottom-0 products-more">詳細資訊</p>
-                                    </div>
+                            <div class="card products-card-hover">
+                                    <RouterLink :to="`/product/${product.id}`">
+                                        <div class="img-fluid card-img-top bg-img products-img position-relative" :style="`background-image: url(${product.imageUrl});`">
+                                            <p class="fs-6 py-2 px-7 mb-0 bg-white position-absolute w-100 text-center bottom-0 products-more">詳細資訊</p>
+                                        </div>
+                                    </RouterLink>
                                     <div class="card-body p-3 p-lg-4">
                                         <h3 class="card-title fs-4 fw-bold mb-3 text-gray-dark">{{ product.set }}<br />{{ product.title }}</h3>
                                         <div class="d-flex gap-2 mb-4">
@@ -76,7 +77,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </RouterLink>
                         </div>
                     </div>
                     <!-- 分頁元件 -->
@@ -123,8 +123,10 @@ export default {
     },
     // 切換類別
     filterProducts (category) {
-      this.category = category
-      this.getProducts()
+      if (this.category !== category) {
+        this.category = category
+        this.getProducts()
+      }
     },
     // 加入購物車
     ...mapActions(cartStore, ['addCart'])
