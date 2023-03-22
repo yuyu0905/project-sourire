@@ -18,7 +18,7 @@
       </div>
     </div>
   </nav>
-  <router-view v-if="checkSuccess"></router-view>
+  <RouterView v-if="checkSuccess"></RouterView>
 </template>
 
 <script>
