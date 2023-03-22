@@ -3,6 +3,9 @@
 # abort on errors
 set -e
 
+# set environment variable NODE_ENV to production
+export NODE_ENV=production
+
 # build
 npm run build
 
