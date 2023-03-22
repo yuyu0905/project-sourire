@@ -47,31 +47,31 @@
             </div>
             <div class="col-12 col-lg-6">
               <h2>訂購資訊</h2>
-              <v-form ref="form" v-slot="{ errors }" @submit="createOrder">
+              <VForm ref="form" v-slot="{ errors }" @submit="createOrder">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <v-field id="email" name="email" type="email" class="form-control"
+                    <VField id="email" name="email" type="email" class="form-control"
                             :class="{ 'is-invalid': errors['email'] }" placeholder="請輸入 Email"
-                            v-model="form.user.email" rules="email|required"></v-field>
-                    <error-message name="email" class="invalid-feedback"></error-message>
+                            v-model="form.user.email" rules="email|required"></VField>
+                    <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">收件人姓名</label>
-                    <v-field id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }"
-                            placeholder="請輸入姓名" rules="required" v-model="form.user.name"></v-field>
-                    <error-message name="姓名" class="invalid-feedback"></error-message>
+                    <VField id="name" name="姓名" type="text" class="form-control" :class="{ 'is-invalid': errors['姓名'] }"
+                            placeholder="請輸入姓名" rules="required" v-model="form.user.name"></VField>
+                    <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="mb-3">
                     <label for="tel" class="form-label">收件人手機</label>
-                    <v-field id="tel" name="電話" type="tel" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
-                            placeholder="請輸入電話" v-model="form.user.tel" :rules="isPhone"></v-field>
-                    <error-message name="電話" class="invalid-feedback"></error-message>
+                    <VField id="tel" name="電話" type="tel" class="form-control" :class="{ 'is-invalid': errors['電話'] }"
+                            placeholder="請輸入電話" v-model="form.user.tel" :rules="isPhone"></VField>
+                    <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="mb-3">
                     <label for="address" class="form-label">收件人地址</label>
-                    <v-field id="address" name="地址" type="text" class="form-control" :class="{ 'is-invalid': errors['地址'] }"
-                            placeholder="請輸入地址" rules="required" v-model="form.user.address"></v-field>
-                    <error-message name="地址" class="invalid-feedback"></error-message>
+                    <VField id="address" name="地址" type="text" class="form-control" :class="{ 'is-invalid': errors['地址'] }"
+                            placeholder="請輸入地址" rules="required" v-model="form.user.address"></VField>
+                    <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="mb-3">
                     <label for="message" class="form-label">留言</label>
@@ -80,7 +80,7 @@
                 <div class="text-end">
                     <button type="submit" class="btn btn-primary py-3 px-5 text-white w-100">送出訂單</button>
                 </div>
-              </v-form>
+              </VForm>
             </div>
           </div>
         </div>
