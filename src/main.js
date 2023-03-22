@@ -10,7 +10,7 @@ import 'vue-loading-overlay/dist/css/index.css'
 import {
   Form, Field, ErrorMessage, defineRule, configure
 } from 'vee-validate'
-import { required, email, min, max } from '@vee-validate/rules'
+import AllRules from '@vee-validate/rules'
 import { localize, setLocale } from '@vee-validate/i18n'
 import zhTW from '@vee-validate/i18n/dist/locale/zh_TW.json'
 
@@ -21,10 +21,9 @@ import { date } from './methods/dateFormat'
 import 'animate.css'
 
 // VeeValid
-defineRule('required', required)
-defineRule('email', email)
-defineRule('min', min)
-defineRule('max', max)
+Object.keys(AllRules).forEach(rule => {
+  defineRule(rule, AllRules[rule])
+})
 
 configure({
   generateMessage: localize({ zh_TW: zhTW })
