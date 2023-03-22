@@ -45,7 +45,3 @@
       </section>
     </main>
 </template>
-
-<script>
-
-</script>
