@@ -155,6 +155,7 @@ export default {
       this.operateType = operateType
       if (operateType === 'create') {
         this.tempCoupon = {
+          is_enabled: 0,
           due_date: new Date().getTime() / 1000
         }
         this.$refs.couponModal.showModal()
