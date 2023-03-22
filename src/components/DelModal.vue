@@ -5,13 +5,15 @@
           <div class="modal-content border-0">
             <div class="modal-header bg-danger text-white">
               <h5 id="delModalLabel" class="modal-title">
-                <span>刪除 {{ tempItem.title }}</span>
+                <span>刪除 {{ tempItem.title || `訂單編號 ${tempItem.id}` }}</span>
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              是否刪除
-              <strong class="text-danger">{{ tempItem.title }}</strong> (刪除後將無法恢復)。
+              <p>是否刪除<strong class="text-danger mb-2">{{ tempItem.title || `訂單編號 ${tempItem.id}` }}</strong> (刪除後將無法恢復)。</p>
+              <p class="fs-5 mb-2" v-if="tempItem.user">用戶資料</p>
+              <p class="mb-0" v-if="tempItem.user">姓名： {{tempItem.user.name}}</p>
+              <p v-if="tempItem.user">Email： {{tempItem.user.email}}</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
