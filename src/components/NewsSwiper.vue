@@ -23,7 +23,7 @@
                 <div class="news-bg-1 news-bg-img bg-img">
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h3 class="fw-bold">招募會員</h3>
-                        <p>新加入會員即可享有 50 元購物金</p>
+                        <p class="fw-bold fs-5 mb-0">新加入會員即可享有 50 元購物金</p>
                     </div>
                 </div>
             </swiper-slide>
@@ -32,7 +32,7 @@
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h4>11/6 - 11/12</h4>
                         <h3 class="fw-bold">雙 11 優惠</h3>
-                        <p>全館 9 折起！</p>
+                        <p class="fw-bold fs-5 mb-0">全館 9 折起！</p>
                     </div>
                 </div>
             </swiper-slide>
@@ -40,7 +40,7 @@
                 <div class="news-bg-3 news-bg-img bg-img">
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h3 class="fw-bold">歡慶聖誕節</h3>
-                        <p>除了聖誕限定商品外，<br />
+                        <p class="fw-bold fs-5 mb-0">除了聖誕限定商品外，<br />
                         還有聖誕花藝課程，<br />
                         讓大家打造屬於自己的聖誕裝飾!</p>
                     </div>
@@ -50,7 +50,7 @@
                 <div class="news-bg-1 news-bg-img bg-img">
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h3 class="fw-bold">招募會員</h3>
-                        <p>新加入會員即可享有 50 元購物金</p>
+                        <p class="fw-bold fs-5 mb-0">新加入會員即可享有 50 元購物金</p>
                     </div>
                 </div>
             </swiper-slide>
@@ -59,7 +59,7 @@
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h4>11/6 - 11/12</h4>
                         <h3 class="fw-bold">雙 11 優惠</h3>
-                        <p>全館 9 折起！</p>
+                        <p class="fw-bold fs-5 mb-0">全館 9 折起！</p>
                     </div>
                 </div>
             </swiper-slide>
@@ -67,7 +67,7 @@
                 <div class="news-bg-3 news-bg-img bg-img">
                     <div class="d-flex flex-column justify-content-center align-items-center text-white h-100 news text-center">
                         <h3 class="fw-bold">歡慶聖誕節</h3>
-                        <p>除了聖誕限定商品外，<br />
+                        <p class="fw-bold fs-5 mb-0">除了聖誕限定商品外，<br />
                         還有聖誕花藝課程，<br />
                         讓大家打造屬於自己的聖誕裝飾!</p>
                     </div>
