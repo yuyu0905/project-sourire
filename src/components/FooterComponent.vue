@@ -20,8 +20,8 @@
                 <hr class="mb-lg-4" />
             </div>
         </section>
-        <section class="bg-primary py-3">
-            <p class="text-center text-white small mb-0">Copyright © 2023 六角專題 Sourire 乾燥花坊
+        <section class="bg-background py-3">
+            <p class="text-center text-gray-dark mb-0">Copyright © 2023 六角專題 Sourire 乾燥花坊
                 <br class="d-block d-lg-none" />
                 All Rights Reserved.</p>
         </section>

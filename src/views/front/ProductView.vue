@@ -35,7 +35,7 @@
                     <select class="form-select" v-model.number="qty">
                       <option v-for="i in 20" :value="i" :key="`${i}_qty`">{{i}}</option>
                     </select>
-                    <button type="button" class="btn btn-primary py-3 px-5 text-white link-width"
+                    <button type="button" class="btn btn-primary py-3 px-5 text-dark-gray link-width"
                         @click.prevent="addCart(product.id, qty)"
                         :disabled="product.id === loadingItem"
                         style="z-index: 1;">

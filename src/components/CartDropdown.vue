@@ -19,12 +19,12 @@
           <template v-if="cart.carts && cart.carts.length > 0">
             <p class="fs-6 text-end fw-bold">{{`總計金額：NT$ ${cart.final_total}`}}</p>
             <div class="d-flex justify-content-center mb-2">
-                <a class="btn btn-primary py-2 px-5 text-white link-width" role="button" @click="goCarts()">前往結帳</a>
+                <a class="btn btn-primary py-2 px-5 text-gray-dark link-width" role="button" @click="goCarts()">前往結帳</a>
             </div>
           </template>
           <div class="d-flex flex-column justify-content-center align-items-center mt-4" v-else>
             <p><i class="fa-solid fa-cart-shopping mb-2 me-2 fs-5"></i>購物車內沒有商品</p>
-            <a class="btn btn-primary py-2 px-5 text-white link-width" role="button" @click="goProducts()">再去晃晃吧</a>
+            <a class="btn btn-primary py-2 px-5 text-gray-dark link-width" role="button" @click="goProducts()">再去晃晃吧</a>
           </div>
         </div>
     </div>

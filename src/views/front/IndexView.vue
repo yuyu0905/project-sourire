@@ -25,8 +25,8 @@
                 搜尋
               </RouterLink>
                -->
-              <RouterLink class="btn btn-primary py-3 text-white col-5 small" to="/products">
-                購買去<i class="fa-solid fa-arrow-right text-white icon"></i>
+              <RouterLink class="btn btn-primary py-3 text-gray-dark col-5" to="/products">
+                購買去<i class="fa-solid fa-arrow-right text-gray-dark icon"></i>
               </RouterLink>
             </form>
           </div>

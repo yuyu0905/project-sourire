@@ -14,7 +14,7 @@ $gray-400: #ECECEC; // #ced4da !default;
 $gray-500: #adb5bd !default;
 $gray-600: #909090; // #6c757d !default;
 $gray-700: #495057 !default;
-$gray-800: #4B4B4B; // #343a40 !default;
+$gray-800: #474747; // #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
@@ -307,6 +307,7 @@ $danger:        $red !default;
 $light:         #FDF4F2; // $gray-100 !default;
 $dark:          #EA7E67; //$gray-900 !default;
 $background:    $gray-300 !default;
+$primary-dark:  #e9684c;
 // scss-docs-end theme-color-variables
 
 // scss-docs-start theme-colors-map
@@ -321,6 +322,7 @@ $theme-colors: (
   "dark":       $dark,
   "background": $background,
   "gray-dark":  $gray-800,
+  "primary-dark": $primary-dark,
 ) !default;
 // scss-docs-end theme-colors-map
 
@@ -1198,7 +1200,7 @@ $pagination-padding-x-lg:           1.5rem !default;
 
 $pagination-font-size:              $font-size-base !default;
 
-$pagination-color:                  var(--#{$prefix}link-color) !default;
+$pagination-color:                  $gray-800; // var(--#{$prefix}link-color) !default;
 $pagination-bg:                     $white !default;
 $pagination-border-radius:          $border-radius !default;
 $pagination-border-width:           $border-width !default;
@@ -1210,11 +1212,11 @@ $pagination-focus-bg:               $gray-200 !default;
 $pagination-focus-box-shadow:       $input-btn-focus-box-shadow !default;
 $pagination-focus-outline:          0 !default;
 
-$pagination-hover-color:            var(--#{$prefix}link-hover-color) !default;
+$pagination-hover-color:            $gray-800; // var(--#{$prefix}link-hover-color) !default;
 $pagination-hover-bg:               $gray-200 !default;
 $pagination-hover-border-color:     $gray-300 !default;
 
-$pagination-active-color:           $component-active-color !default;
+$pagination-active-color:           $gray-800; // $component-active-color !default;
 $pagination-active-bg:              $component-active-bg !default;
 $pagination-active-border-color:    $pagination-active-bg !default;
 

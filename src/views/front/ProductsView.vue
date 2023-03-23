@@ -12,37 +12,37 @@
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '' ? 'active' : ''}`"
                             @click.prevent="filterProducts('')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === ''"></i>全部商品</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === ''"></i>全部商品</h5>
                             </div>
                         </a>
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '花束' ? 'active' : ''}`"
                             @click.prevent="filterProducts('花束')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === '花束'"></i>經典花束</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === '花束'"></i>經典花束</h5>
                             </div>
                         </a>
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '盆花' ? 'active' : ''}`"
                             @click.prevent="filterProducts('盆花')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === '盆花'"></i>乾燥盆花</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === '盆花'"></i>乾燥盆花</h5>
                             </div>
                         </a>
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '捧花' ? 'active' : ''}`"
                             @click.prevent="filterProducts('捧花')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === '捧花'"></i>新娘捧花</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === '捧花'"></i>新娘捧花</h5>
                             </div>
                         </a>
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '花圈' ? 'active' : ''}`"
                             @click.prevent="filterProducts('花圈')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === '花圈'"></i>花圈</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === '花圈'"></i>花圈</h5>
                             </div>
                         </a>
                         <a href="#" :class="`list-group-item list-group-item-action btn btn-basic py-2 ${category === '材料' ? 'active' : ''}`"
                             @click.prevent="filterProducts('材料')">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-white" v-if="category === '材料'"></i>手作材料包</h5>
+                                <h5 class="mb-1"><i class="fa-solid fa-seedling icon text-gray-dark" v-if="category === '材料'"></i>手作材料包</h5>
                             </div>
                         </a>
                     </div>
@@ -59,13 +59,13 @@
                                     <div class="card-body p-3 p-lg-4">
                                         <h3 class="card-title fs-4 fw-bold mb-3 text-gray-dark">{{ product.set }}<br />{{ product.title }}</h3>
                                         <div class="d-flex gap-2 mb-4">
-                                            <p class="mb-0" v-if="product.is_limited_time"><span class="badge bg-light text-primary fw-normal fs-6">期間限定</span></p>
-                                            <p class="mb-0" v-else-if="product.category === '花束'"><span class="badge bg-light text-primary fw-normal fs-6">送禮首選</span></p>
-                                            <p class="mb-0"><span class="badge bg-light text-primary fw-normal fs-6">{{ product.category }}</span></p>
+                                            <p class="mb-0" v-if="product.is_limited_time"><span class="badge bg-light text-gray-dark fw-normal fs-6">期間限定</span></p>
+                                            <p class="mb-0" v-else-if="product.category === '花束'"><span class="badge bg-light text-gray-dark fw-normal fs-6">送禮首選</span></p>
+                                            <p class="mb-0"><span class="badge bg-light text-gray-dark fw-normal fs-6">{{ product.category }}</span></p>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text text-primary fw-bold fs-5 mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
-                                            <p v-else class="card-text text-primary fw-bold fs-5 mb-0">
+                                            <p class="card-text text-primary-dark fw-bold fs-5 mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
+                                            <p v-else class="card-text text-primary-dark fw-bold fs-5 mb-0">
                                                 <del class="text-gray-dark fw-normal small me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
                                             </p>
                                             <button type="button" class="btn btn-outline-gray-dark border-gray-dark fw-bold py-2"
