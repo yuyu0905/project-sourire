@@ -30,7 +30,7 @@
                 <div class="mb-3">
                   <label for="due_date">到期日</label>
                   <VField id="due_date" name="到期日" type="date" class="form-control" :class="{ 'is-invalid': errors['到期日'] }"
-                    placeholder="請輸入到期日" rules="required" v-model="due_date"></VField>
+                    placeholder="請輸入到期日" :rules="ltToday" v-model="due_date"></VField>
                   <ErrorMessage name="到期日" class="invalid-feedback"></ErrorMessage>
                 </div>
                 <div class="mb-3">
@@ -83,6 +83,11 @@ export default {
     },
     hideModal () {
       this.couponModal.hide()
+    },
+    ltToday (val) {
+      // 建立新的優惠券時，不可輸入已經過去的日期
+      const [today] = new Date().toISOString().split('T')
+      return val >= today || this.innerCoupon.id ? true : '到期日 不可小於今日'
     }
   },
   mounted () {
