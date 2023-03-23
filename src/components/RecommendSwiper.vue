@@ -24,22 +24,22 @@
             <i class="fa-solid fa-angle-left icon-lg swiper-button-prev text-gray-dark bg-white rounded-pill hover-transform-scale"></i>
             <swiper-slide v-for="product in products" :key="product.id">
                 <RouterLink :to="`/product/${product.id}`">
-                    <div class="card">
+                    <div class="card recommend-card-hover">
                         <img class="img-fluid card-img-top recommend-img" :src="product.imageUrl" :alt="product.imageUrl">
                         <div class="card-body p-3 p-lg-4">
                         <h3 class="card-title fw-bold mb-3 text-gray-dark">{{ product.set }}<br />{{ product.title }}</h3>
                         <div class="d-flex gap-2 mb-4">
-                            <p class="mb-0" v-if="product.is_limited_time"><span class="badge bg-light text-primary fw-normal fs-6">期間限定</span></p>
-                            <p class="mb-0" v-else-if="product.category === '花束'"><span class="badge bg-light text-primary fw-normal fs-6">送禮首選</span></p>
-                            <p class="mb-0"><span class="badge bg-light text-primary fw-normal fs-6">{{ product.category }}</span></p>
+                            <p class="mb-0" v-if="product.is_limited_time"><span class="badge bg-light text-gray-dark fw-normal fs-6">期間限定</span></p>
+                            <p class="mb-0" v-else-if="product.category === '花束'"><span class="badge bg-light text-gray-dark fw-normal fs-6">送禮首選</span></p>
+                            <p class="mb-0"><span class="badge bg-light text-gray-dark fw-normal fs-6">{{ product.category }}</span></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-text fs-4 text-primary fw-bold mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
-                            <p v-else class="card-text fs-4 text-primary fw-bold mb-0">
+                            <p class="card-text fs-4 text-primary-dark fw-bold mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
+                            <p v-else class="card-text fs-4 text-primary-dark fw-bold mb-0">
                                 <del class="text-gray-dark fw-normal fs-6 me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
                             </p>
-                            <RouterLink href="#" class="btn btn-basic fw-bold py-2" :to="`/product/${product.id}`">立即購買
-                                <i class="fa-solid fa-arrow-right icon"></i>
+                            <RouterLink href="#" class="fw-bold recommend-btn hover-transform-scale" :to="`/product/${product.id}`">立即購買
+                                <i class="fa-solid fa-arrow-right"></i>
                             </RouterLink>
                         </div>
                         </div>
@@ -56,7 +56,7 @@
         </swiper>
     </div>
     <div class="d-flex justify-content-center">
-        <RouterLink class="btn btn-primary py-3 px-5 text-white link-width" to="/products">
+        <RouterLink class="btn btn-primary py-3 px-5 text-gray-dark link-width" to="/products">
         查看更多
         </RouterLink>
     </div>
