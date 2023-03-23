@@ -53,7 +53,7 @@
                 </tbody>
               </table>
               <hr />
-              <p class="fs-5 text-end fw-bold">
+              <p class="fs-5 text-end fw-bold" v-if="order.total">
                 {{`總計金額：NT$ ${order.total}`}}
               </p>
             </div>
