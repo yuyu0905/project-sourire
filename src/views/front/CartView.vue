@@ -5,47 +5,41 @@
     <main>
       <section class="bg-background py-5 min-height">
         <div class="container">
-          <ul class="row row-cols-3 list-unstyled mb-5 text-center">
+          <ul class="row row-cols-3 list-unstyled mb-5 text-center" v-if="cart.carts && cart.carts.length > 0">
             <li class="col">
-              <p class="mb-0 bg-gray-dark text-white m-2 p-3">STEP 1<br />建立訂單</p>
+              <p class="mb-0 bg-gray-dark text-white m-2 p-3">STEP 1<br />建立<br class="d-block d-lg-none"/>訂單</p>
             </li>
             <li class="col">
-              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 2<br />結帳</p>
+              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 2<br />進行<br class="d-block d-lg-none"/>結帳</p>
             </li>
             <li class="col">
-              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 3<br />訂單完成</p>
+              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 3<br />訂單<br class="d-block d-lg-none"/>完成</p>
             </li>
           </ul>
           <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 p-5" v-if="cart.carts && cart.carts.length > 0">
               <h2>確認訂單內容</h2>
               <CartList />
-              <template v-if="cart.carts && cart.carts.length > 0">
-                <hr />
-                <div class="input-group mb-3 input-group-sm">
-                  <input type="text" class="form-control" placeholder="已套用優惠券" disabled v-if="cart.final_total !== cart.total">
-                  <input type="text" class="form-control" v-model="couponCode" placeholder="請輸入優惠券" v-else />
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-primary" :disabled="cart.final_total !== cart.total || loadingItem != ''"
-                      type="button" @click="addCouponCode">
-                      <i class="fas fa-spinner fa-pulse" v-if="loadingItem != ''"></i>
-                      套用優惠碼
-                    </button>
-                  </div>
+              <hr />
+              <div class="input-group mb-3 input-group-sm">
+                <input type="text" class="form-control" placeholder="已套用優惠券" disabled v-if="cart.final_total !== cart.total">
+                <input type="text" class="form-control" v-model="couponCode" placeholder="請輸入優惠券" v-else />
+                <div class="input-group-append">
+                  <button class="btn btn-outline-primary text-gray-dark" :disabled="cart.final_total !== cart.total || loadingItem != ''"
+                    type="button" @click="addCouponCode">
+                    <i class="fas fa-spinner fa-pulse" v-if="loadingItem != ''"></i>
+                    套用優惠碼
+                  </button>
                 </div>
-                <p class="fs-5 text-end fw-bold" :class="cart.final_total !== cart.total ? 'text-muted text-decoration-line-through' : ''">
-                  {{`總計金額：NT$ ${cart.total}`}}
-                </p>
-                <p class="fs-5 text-end fw-bold mb-4" v-if="cart.final_total !== cart.total">
-                  {{`折扣後金額：NT$ ${cart.final_total}`}}
-                </p>
-              </template>
-              <div class="d-flex flex-column justify-content-center align-items-start mt-4" v-else>
-                <p><i class="fa-solid fa-cart-shopping mb-2 me-2 fs-5"></i>購物車內沒有商品</p>
-                <a class="btn btn-primary py-3 px-5 text-white" role="button" @click="() => $router.push('/products')">再去晃晃吧</a>
               </div>
+              <p class="fs-5 text-end fw-bold" :class="cart.final_total !== cart.total ? 'text-muted text-decoration-line-through' : ''">
+                {{`總計金額：NT$ ${cart.total}`}}
+              </p>
+              <p class="fs-5 text-end fw-bold mb-4" v-if="cart.final_total !== cart.total">
+                {{`折扣後金額：NT$ ${cart.final_total}`}}
+              </p>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 bg-white p-5" v-if="cart.carts && cart.carts.length > 0">
               <h2>訂購資訊</h2>
               <VForm ref="form" v-slot="{ errors }" @submit="createOrder">
                 <div class="mb-3">
@@ -78,10 +72,17 @@
                     <textarea id="message" name="message" class="form-control" cols="30" rows="10" v-model="form.message"></textarea>
                 </div>
                 <div class="text-end">
-                    <button type="submit" class="btn btn-primary py-3 px-5 text-white w-100">送出訂單</button>
+                    <button type="submit" class="btn btn-primary py-3 px-5 text-gray-dark w-100">送出訂單</button>
                 </div>
               </VForm>
             </div>
+            <template v-else>
+              <div class="col-12 d-flex flex-column justify-content-center align-items-center my-5">
+                <p><i class="fa-solid fa-cart-shopping mb-2 me-2 fs-5"></i>購物車內沒有商品</p>
+                <a class="btn btn-primary py-3 px-5 text-gray-dark" role="button" @click="() => $router.push('/products')">再去晃晃吧</a>
+              </div>
+              <RecommendSwiper />
+            </template>
           </div>
         </div>
       </section>
@@ -93,6 +94,8 @@ import { Toast } from '@/methods/toast.js'
 import { mapActions, mapState } from 'pinia'
 import cartStore from '@/stores/cart'
 import CartList from '@/components/CartList.vue'
+import RecommendSwiper from '@/components/RecommendSwiper.vue'
+
 const { VITE_API, VITE_APIPATH } = import.meta.env
 export default {
   data () {
@@ -112,7 +115,8 @@ export default {
     }
   },
   components: {
-    CartList
+    CartList,
+    RecommendSwiper
   },
   methods: {
     ...mapActions(cartStore, ['getCart']),

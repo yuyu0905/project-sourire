@@ -7,17 +7,25 @@
         <div class="container">
           <ul class="row row-cols-3 list-unstyled mb-5 text-center">
             <li class="col">
-              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 1<br />建立訂單</p>
+              <p class="mb-0 border border-gray-dark m-2 p-3">STEP 1<br />建立<br class="d-block d-lg-none"/>訂單</p>
             </li>
             <li class="col">
-              <p :class="`mb-0 m-2 p-3 ${order.is_paid ? 'border border-gray-dark' : 'mb-0 bg-gray-dark text-white'}`">STEP 2<br />結帳</p>
+              <p :class="`mb-0 m-2 p-3 ${order.is_paid ? 'border border-gray-dark' : 'mb-0 bg-gray-dark text-white'}`">STEP 2<br />進行<br class="d-block d-lg-none"/>結帳</p>
             </li>
             <li class="col">
-              <p :class="`mb-0 m-2 p-3 ${!order.is_paid ? 'border border-gray-dark' : 'mb-0 bg-gray-dark text-white'}`">STEP 3<br />訂單完成</p>
+              <p :class="`mb-0 m-2 p-3 ${!order.is_paid ? 'border border-gray-dark' : 'mb-0 bg-gray-dark text-white'}`">STEP 3<br />訂單<br class="d-block d-lg-none"/>完成</p>
             </li>
           </ul>
+          <div v-if="order.is_paid" class="d-flex flex-column justify-content-center align-items-center mb-4">
+            <h2>訂購成功，感謝您的訂購</h2>
+            <p>花禮均需要時間進行製作，製作天數約3~5天不等</p>
+            <button type="button" class="btn btn-primary py-3 px-5 text-gray-dark"
+              @click="$router.push('/products')">
+              再去晃晃吧
+            </button>
+          </div>
           <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 p-5">
               <h2>{{ order.is_paid ? '訂購完成' : '訂單內容' }}</h2>
               <table class="table table-hover align-middle text-center text-gray-dark">
                 <thead>
@@ -49,7 +57,7 @@
                 {{`總計金額：NT$ ${order.total}`}}
               </p>
             </div>
-            <div class="col-12 col-lg-6" v-if="order.user">
+            <div class="col-12 col-lg-6 bg-white p-5" v-if="order.user">
               <h2>訂購資訊</h2>
               <div class="row my-3">
                   <p class="col-4 mb-0">Email</p>
@@ -71,8 +79,8 @@
                   <p class="col-4 mb-0">留言</p>
                   <p class="col-8 mb-0">{{ order.user.message }}</p>
               </div>
-              <div class="text-end mt-5" v-if="!order.is_paid">
-                  <button type="button" class="btn btn-primary py-3 px-5 text-white w-100"
+              <div class="col-12 mt-5" v-if="!order.is_paid">
+                  <button type="button" class="btn btn-primary py-3 px-5 text-gray-dark w-100"
                     @click="payOrder">
                     付款
                   </button>
