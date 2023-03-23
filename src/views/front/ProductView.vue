@@ -65,6 +65,15 @@
             </ul>
         </div>
     </section>
+    <section class="bg-white py-5">
+      <div class="container">
+        <h2 class="mb-3">心意傳遞，讓花語說出您的心聲</h2>
+        <p class="mb-0">除了精選的花材與精心的包裝，我們也提供個人化的花卡，</p>
+        <p>讓您能夠用簡短的文字傳達您的情感，讓您的愛與祝福傳遞到對方心中。</p>
+        <p class="mb-0">若您需要花卡服務，請與我們聯繫，告知您想傳達的話語，</p>
+        <p>我們會為您印製出專屬的花卡，讓您的心意更加完整地呈現。</p>
+      </div>
+    </section>
     <!-- 精選花束 -->
     <section class="bg-background py-5">
         <div class="container">
