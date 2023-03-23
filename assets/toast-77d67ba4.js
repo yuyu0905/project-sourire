@@ -1,0 +1,1 @@
+import{S as s}from"./sweetalert2.all-0b553f6e.js";const i=s.mixin({toast:!0,position:"top-right",showConfirmButton:!1,timer:1500,background:"#F6F6F5"}),a=(t,o)=>{i.fire({icon:o,text:t})};export{a as T};
