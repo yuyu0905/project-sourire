@@ -5,7 +5,8 @@
     }
     .active {
         color: $dark !important;
-        border-bottom: solid;
+        border-bottom: solid $dark 3px;
+        margin-bottom: -3px;
     }
 }
 
