@@ -64,9 +64,9 @@
                                             <p class="mb-0"><span class="badge bg-light text-gray-dark fw-normal fs-6">{{ product.category }}</span></p>
                                         </div>
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <p class="card-text text-primary-dark fw-bold fs-5 mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
+                                            <p class="card-text text-primary-dark fw-bold fs-5 mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${$priceFormat.price(product.origin_price)}` }}</p>
                                             <p v-else class="card-text text-primary-dark fw-bold fs-5 mb-0">
-                                                <del class="text-gray-dark fw-normal small me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
+                                                <del class="text-gray-dark fw-normal small me-2">{{ `NT$ ${$priceFormat.price(product.origin_price)}` }}</del>{{ `NT$ ${$priceFormat.price(product.price)}` }}
                                             </p>
                                             <button type="button" class="btn btn-outline-gray-dark border-gray-dark fw-bold py-2"
                                                 @click.prevent="addCart(product.id)"

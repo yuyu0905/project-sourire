@@ -18,6 +18,7 @@ import App from './App.vue'
 import router from './router'
 
 import { date } from './methods/dateFormat'
+import { price } from './methods/priceFormat'
 import 'animate.css'
 
 // VeeValid
@@ -34,6 +35,7 @@ setLocale('zh_TW')
 
 const app = createApp(App)
 app.config.globalProperties.$dateFormat = { date }
+app.config.globalProperties.$priceFormat = { price }
 
 app.use(createPinia())
 app.use(router)

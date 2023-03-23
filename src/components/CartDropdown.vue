@@ -17,7 +17,7 @@
             <CartList />
           </div>
           <template v-if="cart.carts && cart.carts.length > 0">
-            <p class="fs-6 text-end fw-bold">{{`總計金額：NT$ ${cart.final_total}`}}</p>
+            <p class="fs-6 text-end fw-bold">{{`總計金額：NT$ ${$priceFormat.price(cart.final_total)}`}}</p>
             <div class="d-flex justify-content-center mb-2">
                 <a class="btn btn-primary py-2 px-5 text-gray-dark link-width" role="button" @click="goCarts()">前往結帳</a>
             </div>

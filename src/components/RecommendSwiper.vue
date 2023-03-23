@@ -34,9 +34,9 @@
                             <p class="mb-0"><span class="badge bg-light text-gray-dark fw-normal fs-6">{{ product.category }}</span></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-text fs-4 text-primary-dark fw-bold mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
+                            <p class="card-text fs-4 text-primary-dark fw-bold mb-0" v-if="product.price === product.origin_price">{{ `NT$ ${$priceFormat.price(product.origin_price) }` }}</p>
                             <p v-else class="card-text fs-4 text-primary-dark fw-bold mb-0">
-                                <del class="text-gray-dark fw-normal fs-6 me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
+                                <del class="text-gray-dark fw-normal fs-6 me-2">{{ `NT$ ${$priceFormat.price(product.origin_price)}` }}</del>{{ `NT$ ${$priceFormat.price(product.price)}` }}
                             </p>
                             <RouterLink href="#" class="fw-bold recommend-btn hover-transform-scale" :to="`/product/${product.id}`">立即購買
                                 <i class="fa-solid fa-arrow-right"></i>

@@ -27,9 +27,9 @@
                   <h3 class="mb-3">{{ product.subTitle }}</h3>
                   <p>{{ product.content }}</p>
                   <p class="mb-5" v-html="product.description"></p>
-                  <p class="fs-3 mb-3" v-if="product.price === product.origin_price">{{ `NT$ ${product.origin_price}` }}</p>
+                  <p class="fs-3 mb-3" v-if="product.price === product.origin_price">{{ `NT$ ${$priceFormat.price(product.origin_price)}` }}</p>
                     <p v-else class="fs-3 mb-3">
-                        <del class="text-gray-dark fw-normal fs-4 me-2">{{ `NT$ ${product.origin_price}` }}</del>{{ `NT$ ${product.price}` }}
+                        <del class="text-gray-dark fw-normal fs-4 me-2">{{ `NT$ ${$priceFormat.price(product.origin_price)}` }}</del>{{ `NT$ ${$priceFormat.price(product.price)}` }}
                     </p>
                   <div class="input-group gap-3 gap-lg-0">
                     <select class="form-select" v-model.number="qty">

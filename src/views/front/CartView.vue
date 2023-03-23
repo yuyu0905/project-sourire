@@ -33,10 +33,10 @@
                 </div>
               </div>
               <p class="fs-5 text-end fw-bold" :class="cart.final_total !== cart.total ? 'text-muted text-decoration-line-through' : ''">
-                {{`總計金額：NT$ ${cart.total}`}}
+                {{`總計金額：NT$ ${$priceFormat.price(cart.total)}`}}
               </p>
               <p class="fs-5 text-end fw-bold mb-4" v-if="cart.final_total !== cart.total">
-                {{`折扣後金額：NT$ ${cart.final_total}`}}
+                {{`折扣後金額：NT$ ${$priceFormat.price(cart.final_total)}`}}
               </p>
             </div>
             <div class="col-12 col-lg-6 bg-white p-5" v-if="cart.carts && cart.carts.length > 0">

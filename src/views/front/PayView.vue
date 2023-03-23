@@ -47,14 +47,14 @@
                         {{ product.qty }}
                     </td>
                     <td>
-                        {{ `NT$ ${product.final_total}` }}
+                        {{ `NT$ ${$priceFormat.price(product.final_total)}` }}
                     </td>
                   </tr>
                 </tbody>
               </table>
               <hr />
               <p class="fs-5 text-end fw-bold" v-if="order.total">
-                {{`總計金額：NT$ ${order.total}`}}
+                {{`總計金額：NT$ ${$priceFormat.price(order.total)}`}}
               </p>
             </div>
             <div class="col-12 col-lg-6 bg-white p-5" v-if="order.user">

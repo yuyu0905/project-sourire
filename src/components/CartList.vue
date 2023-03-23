@@ -23,7 +23,7 @@
             </select>
         </td>
         <td>
-            {{ `NT$ ${cartItem.final_total}` }}
+            {{ `NT$ ${$priceFormat.price(cartItem.final_total)}` }}
         </td>
         <td>
           <button type="button" class="btn hover-primary p-2 border-0" @click="delCart(cartItem.id)"
