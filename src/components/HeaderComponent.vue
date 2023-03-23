@@ -23,9 +23,6 @@
           <div class="d-flex flex-column flex-lg-row justify-content-between menu">
             <ul class="navbar-nav align-items-center">
               <li class="nav-item">
-                <RouterLink class="d-block py-3 text-gray-dark p-3 p-lg-2 hover-primary" to="/" @click="() => closeMenu ()">首頁</RouterLink>
-              </li>
-              <li class="nav-item">
                 <RouterLink class="d-block py-3 text-gray-dark p-3 p-lg-2 hover-primary" to="/products" @click="() => closeMenu ()">購買花禮</RouterLink>
               </li>
               <!-- TODO -->
